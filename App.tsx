@@ -51,9 +51,11 @@ const Sidebar = ({ role, onLogout }: { role: UserRole, onLogout: () => void }) =
   const menuItems = [
     { name: 'لوحة التحكم', path: '/', icon: HomeIcon, roles: ['PROJECT_MANAGER', 'LAB_MANAGER', 'YOUTH'] },
     { name: 'الأكاديمية', path: '/academy', icon: AcademicCapIcon, roles: ['YOUTH', 'LAB_MANAGER', 'PROJECT_MANAGER', 'GUEST'] },
+    { name: 'لوحة الصدارة', path: '/leaderboard', icon: TrophyIcon, roles: ['PROJECT_MANAGER', 'LAB_MANAGER', 'YOUTH'] },
     { name: 'مؤشرات الأداء (KPIs)', path: '/kpis', icon: ChartBarIcon, roles: ['PROJECT_MANAGER', 'LAB_MANAGER'] },
     { name: 'تحليل SWOT', path: '/swot', icon: PresentationChartLineIcon, roles: ['PROJECT_MANAGER', 'LAB_MANAGER'] },
     { name: 'مكتبة الأصول', path: '/assets', icon: ArchiveBoxIcon, roles: ['PROJECT_MANAGER', 'LAB_MANAGER', 'YOUTH'] },
+    { name: 'معرض الوسائط', path: '/media', icon: SparklesIcon, roles: ['PROJECT_MANAGER', 'LAB_MANAGER', 'YOUTH'] },
     { name: 'مخطط التصميم', path: '/design', icon: LightBulbIcon, roles: ['YOUTH', 'LAB_MANAGER'] },
     { name: 'برنامج Sprint', path: '/sprint', icon: CalendarIcon, roles: ['YOUTH', 'LAB_MANAGER'] },
     { name: 'دليل البودكاست', path: '/podcast', icon: MicrophoneIcon, roles: ['YOUTH', 'LAB_MANAGER'] },
