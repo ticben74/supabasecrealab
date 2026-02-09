@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { HashRouter as Router, Routes, Route, Link, useLocation, Navigate } from 'react-router-dom';
 import { 
   HomeIcon, 
@@ -20,24 +20,30 @@ import {
   WrenchScrewdriverIcon,
   UserGroupIcon,
   MapIcon,
-  UserPlusIcon
+  UserPlusIcon,
+  TrophyIcon
 } from '@heroicons/react/24/outline';
+import LoadingFallback from './components/LoadingFallback';
 import Dashboard from './pages/Dashboard';
-import AiMentor from './pages/AiMentor';
-import ProjectBuilder from './pages/ProjectBuilder';
-import PodcastGuide from './pages/PodcastGuide';
-import Glossary from './pages/Glossary';
-import Reports from './pages/Reports';
 import Login from './pages/Login';
-import CulturalAssets from './pages/CulturalAssets';
-import CreativeStudio from './pages/CreativeStudio';
-import DesignThinking from './pages/DesignThinking';
-import SprintPlanner from './pages/SprintPlanner';
-import KPIsDashboard from './pages/KPIsDashboard';
-import SWOTAnalysis from './pages/SWOTAnalysis';
-import Academy from './pages/Academy';
 import { UserRole } from './types';
 import { authApi } from './services/supabaseClient';
+
+// Lazy loaded pages
+const AiMentor = lazy(() => import('./pages/AiMentor'));
+const ProjectBuilder = lazy(() => import('./pages/ProjectBuilder'));
+const PodcastGuide = lazy(() => import('./pages/PodcastGuide'));
+const Glossary = lazy(() => import('./pages/Glossary'));
+const Reports = lazy(() => import('./pages/Reports'));
+const CulturalAssets = lazy(() => import('./pages/CulturalAssets'));
+const CreativeStudio = lazy(() => import('./pages/CreativeStudio'));
+const DesignThinking = lazy(() => import('./pages/DesignThinking'));
+const SprintPlanner = lazy(() => import('./pages/SprintPlanner'));
+const KPIsDashboard = lazy(() => import('./pages/KPIsDashboard'));
+const SWOTAnalysis = lazy(() => import('./pages/SWOTAnalysis'));
+const Academy = lazy(() => import('./pages/Academy'));
+const Leaderboard = lazy(() => import('./pages/Leaderboard'));
+const MediaGallery = lazy(() => import('./pages/MediaGallery'));
 
 const Sidebar = ({ role, onLogout }: { role: UserRole, onLogout: () => void }) => {
   const location = useLocation();
