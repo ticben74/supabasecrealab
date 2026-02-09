@@ -185,9 +185,11 @@ const App: React.FC = () => {
   if (!userRole) return <Login onLogin={(role) => setUserRole(role)} />;
 
   return (
-    <Router>
-      <MainContent userRole={userRole} handleLogout={handleLogout} />
-    </Router>
+    <ToastProvider>
+      <Router>
+        <MainContent userRole={userRole} handleLogout={handleLogout} />
+      </Router>
+    </ToastProvider>
   );
 };
 
