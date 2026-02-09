@@ -24,6 +24,7 @@ import {
   TrophyIcon
 } from '@heroicons/react/24/outline';
 import LoadingFallback from './components/LoadingFallback';
+import { ToastProvider } from './components/Toast';
 import Dashboard from './pages/Dashboard';
 import Login from './pages/Login';
 import { UserRole } from './types';
