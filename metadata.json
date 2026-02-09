@@ -1,0 +1,7 @@
+{
+  "name": "supabase augmented(DGAC)crealab",
+  "description": "منصة رقمية مرافقة لدليل مختبرات الإبداع، تهدف لتمكين الشباب من تحويل أفكارهم الثقافية إلى مشاريع واقعية لمكافحة الهجرة غير النظامية.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
