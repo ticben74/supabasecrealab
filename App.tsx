@@ -131,22 +131,26 @@ const MainContent = ({ userRole, handleLogout }: { userRole: UserRole, handleLog
           </header>
         )}
         <div className={`${isAcademy ? 'p-0' : 'p-12'} max-w-[1500px] mx-auto w-full`}>
-          <Routes>
-            <Route path="/" element={<Dashboard role={userRole} />} />
-            <Route path="/academy" element={<Academy onLogout={handleLogout} />} />
-            <Route path="/kpis" element={<KPIsDashboard />} />
-            <Route path="/swot" element={<SWOTAnalysis />} />
-            <Route path="/assets" element={<CulturalAssets />} />
-            <Route path="/design" element={<DesignThinking />} />
-            <Route path="/sprint" element={<SprintPlanner />} />
-            <Route path="/studio" element={<CreativeStudio />} />
-            <Route path="/mentor" element={<AiMentor />} />
-            <Route path="/builder" element={<ProjectBuilder />} />
-            <Route path="/reports" element={<Reports />} />
-            <Route path="/podcast" element={<PodcastGuide />} />
-            <Route path="/glossary" element={<Glossary />} />
-            <Route path="*" element={<Navigate to="/" />} />
-          </Routes>
+          <Suspense fallback={<LoadingFallback />}>
+            <Routes>
+              <Route path="/" element={<Dashboard role={userRole} />} />
+              <Route path="/academy" element={<Academy onLogout={handleLogout} />} />
+              <Route path="/leaderboard" element={<Leaderboard />} />
+              <Route path="/kpis" element={<KPIsDashboard />} />
+              <Route path="/swot" element={<SWOTAnalysis />} />
+              <Route path="/assets" element={<CulturalAssets />} />
+              <Route path="/media" element={<MediaGallery />} />
+              <Route path="/design" element={<DesignThinking />} />
+              <Route path="/sprint" element={<SprintPlanner />} />
+              <Route path="/studio" element={<CreativeStudio />} />
+              <Route path="/mentor" element={<AiMentor />} />
+              <Route path="/builder" element={<ProjectBuilder />} />
+              <Route path="/reports" element={<Reports />} />
+              <Route path="/podcast" element={<PodcastGuide />} />
+              <Route path="/glossary" element={<Glossary />} />
+              <Route path="*" element={<Navigate to="/" />} />
+            </Routes>
+          </Suspense>
         </div>
       </main>
     </div>
